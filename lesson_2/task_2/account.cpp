@@ -1,6 +1,6 @@
 ﻿// NetoHomework_3_2_02
 // Author: Ryabinkin Alexey
-// Data: 03.03.25
+// Data: 11.03.25
 
 #include <iostream>
 #include <string>
@@ -11,13 +11,11 @@ struct account //создание структуры для хранения д�
     int number{};
     std::string name{};
     float balanсe{};
-
-    float setBalance{};
 };
 
-void changeBalance(account& newbalance) //создание функции для изменения баланса
+void changeBalance(account& newbalance, float newbal) //создание функции для изменения баланса
 {
-    newbalance.balanсe = newbalance.setBalance;
+    newbalance.balanсe = newbal;
 }
 
 int main()
@@ -26,6 +24,7 @@ int main()
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
+    float newbal{};
 
     //объявление экземпляра структуры и его инициализация
     account person{};
@@ -36,10 +35,10 @@ int main()
     std::cout << "Введите баланс: ";
     std::cin >> person.balanсe;
     std::cout << "Введите новый баланс: ";
-    std::cin >> person.setBalance;
+    std::cin >> newbal;
     std::cout << std::endl;
     
-    changeBalance(person); //вызов функции для изменения баланса
+    changeBalance(person,newbal); //вызов функции для изменения баланса
 
     //вывод информации о банковском счете
     std::cout << "Ваш счет: " << person.name << ",  " << person.number << ",  " << person.balanсe << std::endl;
