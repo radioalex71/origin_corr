@@ -18,9 +18,9 @@ public:
 
     void add() { ++counter; }; //метод для увеличения значения счетчика
     
-    void sub(int value) { --counter; }; //метод для уменьшения значения счетчика
+    void sub() { --counter; }; //метод для уменьшения значения счетчика
     
-    int equal(int value) { return counter; }; //метод для вывода значения счетчика
+    int equal() { return counter; }; //метод для вывода значения счетчика
 };
 
 int main()
@@ -61,11 +61,11 @@ int main()
             break;
 
         case '-':
-            count.sub(val);
+            count.sub();
             break;
 
         case '=':
-            std::cout << count.equal(val) << std::endl;
+            std::cout << count.equal() << std::endl;
             break;
 
         case 'x':

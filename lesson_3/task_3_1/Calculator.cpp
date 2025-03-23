@@ -1,6 +1,6 @@
 ﻿// NetoHomework_3_3_01
 // Author: Ryabinkin Alexey
-// Data: 17.03.25
+// Data: 23.03.25
 
 #include <iostream>
 
@@ -12,19 +12,17 @@ private:
     double num2{};
 
 public:
-    //конструктор с параметрами
-    Calculator(double num1, double num2)
-    {
-        this->num1 = num1;
-        this->num2 = num2;
-    }
+    //конструктор без параметров
+    Calculator(){}
+    
     //методы класса
-    double add(double num1,double num2) { return num1 + num2; };
-    double multiply(double num1, double num2) { return num1 * num2; };
-    double substract_1_2(double num1, double num2) { return num1 - num2; };
-    double substract_2_1(double num1, double num2) { return num2 - num1; };
-    double divide_1_2(double num1, double num2) { return num1 / num2; };
-    double divide_2_1(double num1, double num2) { return num2 / num1; };
+    double add() { return num1 + num2; };
+    double multiply() { return num1 * num2; };
+    double substract_1_2() { return num1 - num2; };
+    double substract_2_1() { return num2 - num1; };
+    double divide_1_2() { return num1 / num2; };
+    double divide_2_1() { return num2 / num1; };
+    
     bool set_num1(double num1)
     {
         if (num1 != 0) 
@@ -52,7 +50,7 @@ int main()
     double num1{};
     double num2{};
 
-    Calculator calc(0,0); //экземпляр класса
+    Calculator calc; //экземпляр класса
     do
     {
         std::cout << "Введите num1: ";
@@ -77,12 +75,12 @@ int main()
         }
 
     //вывод результатов работы всех методов
-     std::cout << "num1 + num2 = " << calc.add(num1,num2) << std::endl;
-     std::cout << "num1 * num2 = " << calc.multiply(num1, num2) << std::endl;
-     std::cout << "num1 - num2 = " << calc.substract_1_2(num1, num2) << std::endl;
-     std::cout << "num2 - num1 = " << calc.substract_2_1(num1, num2) << std::endl;
-     std::cout << "num1 / num2 = " << calc.divide_1_2(num1, num2) << std::endl;
-     std::cout << "num2 / num1 = " << calc.divide_2_1(num1, num2) << std::endl;
+     std::cout << "num1 + num2 = " << calc.add() << std::endl;
+     std::cout << "num1 * num2 = " << calc.multiply() << std::endl;
+     std::cout << "num1 - num2 = " << calc.substract_1_2() << std::endl;
+     std::cout << "num2 - num1 = " << calc.substract_2_1() << std::endl;
+     std::cout << "num1 / num2 = " << calc.divide_1_2() << std::endl;
+     std::cout << "num2 / num1 = " << calc.divide_2_1() << std::endl;
     
     } while (1>0);
     
